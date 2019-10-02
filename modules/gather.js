@@ -58,7 +58,7 @@ function manualLabor2() {
             setGather('science');
         }
     }
-    else if (trapTrimpsOK){
+    else if (trapTrimpsOK) && notFullPop{
         //combined to optimize code.
         if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
             safeBuyBuilding('Trap');
@@ -66,7 +66,7 @@ function manualLabor2() {
         }
         else if (game.buildings.Trap.owned > 0)
             setGather('trimps');
-    }
+
     else {
         var manualResourceList = {
             'food': 'Farmer',
@@ -119,7 +119,7 @@ function manualLabor2() {
             setGather(lowestResource);
     }
 }
-
+}
 function autogather3() {
 if ((game.global.buildingsQueue.length <= 1 && getPageSetting('gathermetal') == false) || (getPageSetting('gathermetal') == true)) setGather('metal');
 else setGather('buildings')
@@ -206,13 +206,13 @@ function RmanualLabor2() {
                  setGather('science');
         }
     }
-    else if (trapTrimpsOK){
+    else if (trapTrimpsOK)  && notFullPop{
         if (game.buildings.Trap.owned < 5 && canAffordBuilding('Trap')) {
             safeBuyBuilding('Trap');
             setGather('buildings');
         }
-    else if (game.buildings.Trap.owned > 0)
-             setGather('trimps');
+		else if (game.buildings.Trap.owned > 0)
+				 setGather('trimps');
     }
     else {
         var manualResourceList = {
