@@ -515,13 +515,12 @@ function autoMap() {
                 }
             }
         }
-
+	doVoids = voidArray.length >= 1
         var voidArraySorted = voidArray.sort(function(a, b) {
             return a.sortByDiff - b.sortByDiff;
         });
         for (var map in voidArraySorted) {
             var theMap = voidArraySorted[map];
-            doVoids = true;
             var eAttack = getEnemyMaxAttack(game.global.world, theMap.size, 'Voidsnimp', theMap.difficulty);
             if (game.global.world >= 181 || (game.global.challengeActive == "Corrupted" && game.global.world >= 60))
                 eAttack *= (getCorruptScale("attack") / 2).toFixed(1);
@@ -1071,13 +1070,12 @@ function RautoMap() {
                 }
             }
         }
-
+	RdoVoids = voidArray.length >= 1
         var voidArraySorted = voidArray.sort(function(a, b) {
             return a.sortByDiff - b.sortByDiff;
         });
         for (var map in voidArraySorted) {
             var theMap = voidArraySorted[map];
-            RdoVoids = true;
             if (getPageSetting('RDisableFarm') <= 0)
                 RshouldFarm = RshouldFarm || false;
             if (!restartVoidMap)
