@@ -487,7 +487,7 @@ function autoMap() {
         if (game.global.challengeActive != "Daily" && getPageSetting('onlystackedvoids') == true) {
             for (var map in game.global.mapsOwnedArray) {
                 var theMap = game.global.mapsOwnedArray[map];
-                if (theMap.location == 'Void' && theMap.stacked > 0 && not(game.global.challengeActive == "Decay" && theMap.voidBuff == 'getCrit')) {
+                if (theMap.location == 'Void' && theMap.stacked > 0 && !(game.global.challengeActive == "Decay" && theMap.voidBuff == 'getCrit')) {
                     for (var pre in prefixkeys) {
                         if (theMap.name.includes(prefixkeys[pre]))
                             theMap.sortByDiff = 1 * prefixlist[prefixkeys[pre]];
@@ -502,7 +502,7 @@ function autoMap() {
         } else {
             for (var map in game.global.mapsOwnedArray) {
                 var theMap = game.global.mapsOwnedArray[map];
-                if (theMap.location == 'Void' && not(game.global.challengeActive == "Decay" && theMap.voidBuff == 'getCrit')) {
+                if (theMap.location == 'Void' && !(game.global.challengeActive == "Decay" && theMap.voidBuff == 'getCrit')) {
                     for (var pre in prefixkeys) {
                         if (theMap.name.includes(prefixkeys[pre]))
                             theMap.sortByDiff = 1 * prefixlist[prefixkeys[pre]];
